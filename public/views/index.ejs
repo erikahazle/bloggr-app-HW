@@ -6,5 +6,28 @@
 </head>
 <body>
   <h1>Hello Bloggrs!!!</h1>
+  <div class="post-wrapper"></div>
+  <form id="new-post-form">
+    <input type="text" placeholder="Title">
+    <textarea placeholder="Your thoughts go here..."></textarea>
+    <input type="submit">
+  </form>
 </body>
+
+<script id="post-template" type="x-tmpl-mustache">
+  <div class="post-item">
+    <h3 class="post-title">{{title}}</h3>
+    <p class="post-content">{{content}}</p>
+    <div class="comment-item" id={{_id}}></div>
+  </div>
+</script>
+
+<script id="comment-template" type="x-tmpl-mustache">
+    <h4 class="comment-user-name">{{ user_name }}</h4>
+    <p class="comment-content">{{ content }} </p>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.1/mustache.min.js"></script>
+<script src="./scripts/client.js"></script>
 </html>
